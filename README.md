@@ -9,7 +9,7 @@ The code required some modifications in order to be able to connect React to the
 
 Other minor differences from the code of the video ocurred in the Frontend side: the use of `useState([])` instead of `useState()` and proper initialization of some variables as an empty array (`reviews = []`) instead of undefined or null.
 
-We added folders for the controllers, repositories, entities and services. 
+In the Backend we added folders for the controllers, repositories, entities and services.
 
 Changed the `Review` class by setting the `collection` attribute of the `@Document` annotation  to "reviews" instead of "movies". This way, and thanks to the @DocumentReference annotation of the `Movie` Class, the `createReview` method of the `ReviewService` class inserts a new review document in reviews collection and pushes an object containing the review’s id and body into the Movie document’s reviewIds array. This way the annotation @DocumentReference works as expected (this annotation helps to create relationships between documents stored in different collections, similar to the concept of foreign keys in relational databases).
 
